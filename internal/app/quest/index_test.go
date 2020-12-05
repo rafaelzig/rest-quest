@@ -11,9 +11,9 @@ import (
 func TestHandleIndexResponse(t *testing.T) {
 	is := is.New(t)
 	srv := Server{}
-	r := httptest.NewRequest(http.MethodGet, "/started", nil)
+	r := httptest.NewRequest(http.MethodGet, "/", nil)
 	w := httptest.NewRecorder()
-	srv.handleStarted()(w, r)
+	srv.handleIndex()(w, r)
 	is.Equal(w.Code, http.StatusOK)
 	is.Equal(w.Header().Get("Content-Type"), supportedContentType)
 

@@ -10,7 +10,7 @@ import (
 	"testing"
 )
 
-func TestHelloIntegration(t *testing.T) {
+func TestServerIntegration(t *testing.T) {
 	if testing.Short() {
 		t.Skip("skipping integration test")
 	}

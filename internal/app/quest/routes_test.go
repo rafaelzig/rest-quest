@@ -16,8 +16,9 @@ func TestRoutesAllowedMethodsIntegration(t *testing.T) {
 	srv := Server{Router: mux.NewRouter()}
 	srv.Routes()
 	routes := map[string]string{
-		"/":       http.MethodGet,
-		"/health": http.MethodGet,
+		"/":        http.MethodGet,
+		"/started": http.MethodGet,
+		"/health":  http.MethodGet,
 	}
 
 	for route, method := range routes {

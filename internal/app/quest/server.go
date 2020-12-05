@@ -5,6 +5,7 @@ import (
 	"github.com/gorilla/mux"
 	"github.com/rafaelzig/rest-quest/internal/pkg/log"
 	"net/http"
+	"os"
 	"time"
 )
 
@@ -61,4 +62,15 @@ func (s *Server) log(l log.Level, v interface{}) {
 		Message:   v,
 	}
 	s.LogHandlerFunc(e)
+}
+
+func fileExists(name string) (bool, error) {
+	_, err := os.Stat(name)
+	if err == nil {
+		return true, nil
+	}
+	if os.IsNotExist(err) {
+		return false, nil
+	}
+	return false, err
 }
