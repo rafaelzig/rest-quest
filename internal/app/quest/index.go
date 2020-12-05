@@ -7,7 +7,7 @@ func (s *Server) handleIndex() func(http.ResponseWriter, *http.Request) {
 		Message string      `json:"message"`
 		Next    interface{} `json:"next"`
 	}{
-		Message: "Hello young warrior, in order to get started, a warrior needs a name!",
+		Message: "Hello brave warrior. In order to get started, a warrior needs a name!",
 		Next: struct {
 			Action      string `json:"action"`
 			Location    string `json:"location"`

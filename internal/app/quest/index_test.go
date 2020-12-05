@@ -8,7 +8,7 @@ import (
 	"testing"
 )
 
-func TestHandleIndexResponseCode(t *testing.T) {
+func TestHandleIndexResponse(t *testing.T) {
 	is := is.New(t)
 	srv := Server{}
 	r := httptest.NewRequest(http.MethodGet, "/started", nil)
@@ -27,7 +27,7 @@ func TestHandleIndexResponseCode(t *testing.T) {
 		Next    next   `json:"next"`
 	}
 	expected := response{
-		Message: "Hello young warrior, in order to get started, a warrior needs a name!",
+		Message: "Hello brave warrior. In order to get started, a warrior needs a name!",
 		Next: next{
 			Action:      http.MethodGet,
 			Location:    "/started",
