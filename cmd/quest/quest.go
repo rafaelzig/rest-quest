@@ -55,8 +55,10 @@ func handleLogEvent() func(v interface{}) {
 
 func createServer(h *quest.Server) *http.Server {
 	server := &http.Server{
-		Addr:    ":" + strconv.FormatUint(uint64(parseServerPort(os.Getenv(serverPortEnvKey))), 10),
-		Handler: h,
+		Addr:         ":" + strconv.FormatUint(uint64(parseServerPort(os.Getenv(serverPortEnvKey))), 10),
+		Handler:      h,
+		WriteTimeout: 5 * time.Second,
+		ReadTimeout:  5 * time.Second,
 	}
 	return server
 }
