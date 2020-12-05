@@ -28,7 +28,7 @@ func TestHandleIndexResponseCode(t *testing.T) {
 	expected := response{
 		Message: "Hello young warrior, please proceed with caution",
 		Next: next{
-			Action:   "GET",
+			Action:   http.MethodGet,
 			Location: "/started",
 		},
 	}

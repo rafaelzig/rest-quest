@@ -12,7 +12,7 @@ func (s *Server) handleIndex() func(http.ResponseWriter, *http.Request) {
 			Action   string `json:"action"`
 			Location string `json:"location"`
 		}{
-			Action:   "GET",
+			Action:   http.MethodGet,
 			Location: "/started",
 		},
 	}
